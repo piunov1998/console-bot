@@ -20,7 +20,8 @@ async def ping(ctx):
 
 @bot.command(hidden=True)
 async def off(ctx):
-    await bot.logout()
+    if await bot.is_owner(ctx.author):
+        await bot.logout()
 
 @bot.event
 async def on_ready():
