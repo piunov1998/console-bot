@@ -23,6 +23,10 @@ async def off(ctx):
     if await bot.is_owner(ctx.author):
         await bot.logout()
 
+@bot.command()
+async def info(ctx):
+    await ctx.send(f'```{bot.application_info}```')
+
 @bot.event
 async def on_ready():
     print('Ready.')
