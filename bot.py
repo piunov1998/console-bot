@@ -22,6 +22,7 @@ async def ping(ctx):
 @bot.command(hidden=True)
 async def off(ctx):
     if await bot.is_owner(ctx.author):
+        await ctx.send('```Logging out...```')
         await bot.logout()
 
 @bot.command()
