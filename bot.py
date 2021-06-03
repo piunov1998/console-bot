@@ -1,7 +1,6 @@
 import json, subprocess
 from os import name, path
 import discord
-from discord import user
 from discord.ext import commands
 
 if path.exists('settings.json'):
