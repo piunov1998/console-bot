@@ -16,7 +16,7 @@ bot = commands.Bot(command_prefix='~')
 
 @bot.command()
 async def ping(ctx):
-    await ctx.send('In dev')
+    await ctx.send(f'```Ping {int(bot.latency * 1000)} ms```')
 
 @bot.event
 async def on_ready():
