@@ -1,6 +1,7 @@
 import json, subprocess
-from os import path
+from os import name, path
 import discord
+from discord import user
 from discord.ext import commands
 
 if path.exists('settings.json'):
@@ -25,7 +26,8 @@ async def off(ctx):
 
 @bot.command()
 async def info(ctx):
-    await ctx.send(f'```{await bot.application_info()}```')
+    info = await bot.application_info()
+    await ctx.send(f'```Name: {info.name}\nAuthor: {info.owner.name}:{info.owner.discriminator}```')
 
 @bot.event
 async def on_ready():
