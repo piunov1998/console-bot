@@ -25,7 +25,7 @@ async def off(ctx):
 
 @bot.command()
 async def info(ctx):
-    await ctx.send(f'```{bot.application_info}```')
+    await ctx.send(f'```{await bot.application_info()}```')
 
 @bot.event
 async def on_ready():
