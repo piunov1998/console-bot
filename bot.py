@@ -18,6 +18,10 @@ bot = commands.Bot(command_prefix='~')
 async def ping(ctx):
     await ctx.send(f'```Ping {int(bot.latency * 1000)} ms```')
 
+@bot.command(hidden=True)
+async def off(ctx):
+    await bot.logout()
+
 @bot.event
 async def on_ready():
     print('Ready.')
